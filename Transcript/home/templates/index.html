@@ -1,0 +1,28 @@
+ <html>
+    <head>
+        <title></title>
+
+    <head>
+    <body>
+        <form method="POST" >
+        <input type="text" placeholder="Enter Link" id="link" name="link">
+        <input type="text" placeholder="Enter Shrinkage" id="shrinkage" name="shrinkage">
+
+            {% csrf_token %} 
+            <script>
+                function data(){
+                    var link = document.getElementById("link").value;
+                    var shrinkage = document.getElementById("shrinkage").value;
+                    document.write(shrinkage)
+
+                //const myArr = JSON.parse(link +" "+ shrinkage);
+                //alert("hello");
+                window.open("/action/?l="+link+"&s="+shrinkage);
+                }
+            </script>
+            <td><input type="submit" value="Submit" class="submit" name="submit" id="submit" /></td>
+            {{msg}}
+            <a href="/action/">avc</a>
+        </form>
+    </body>
+</html>
